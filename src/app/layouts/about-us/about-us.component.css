@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
+
+#about-main {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+}
+a {
+    color: #E95205;
+}
+#about-main .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#about-main .story-container {
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+}
+
+@media (max-width: 640px) {
+    #about-main .story-container {
+        margin-top: 80px;
+    }
+}
+
+#about-main .story-container .container-divider {
+    margin-top: 100px;
+}
+
+@media (max-width: 640px) {
+    #about-main .story-container .container-divider {
+        margin-top: 50px;
+    }
+}
+
+#about-main .story-container .need-for-dx-container,
+#about-main .story-container .our-tech-container,
+#about-main .story-container .origin-story-container,
+#about-main .story-container .today-container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 815px) {
+
+    #about-main .story-container .need-for-dx-container,
+    #about-main .story-container .our-tech-container,
+    #about-main .story-container .origin-story-container,
+    #about-main .story-container .today-container {
+        width: 100%;
+    }
+}
+
+#about-main .story-container .need-for-dx-container h3,
+#about-main .story-container .our-tech-container h3,
+#about-main .story-container .origin-story-container h3,
+#about-main .story-container .today-container h3 {
+    color: #e85426;
+}
+
+#about-main .story-container .need-for-dx-container p,
+#about-main .story-container .our-tech-container p,
+#about-main .story-container .origin-story-container p,
+#about-main .story-container .today-container p {
+    font-size: 15px;
+    margin-top: 20px;
+    color: #676a6c;
+}
+
+@media (max-width: 640px) {
+
+    #about-main .story-container .need-for-dx-container p,
+    #about-main .story-container .our-tech-container p,
+    #about-main .story-container .origin-story-container p,
+    #about-main .story-container .today-container p {
+        font-size: 13px;
+    }
+}
+
+#about-main .story-container .need-for-dx-container ul,
+#about-main .story-container .our-tech-container ul,
+#about-main .story-container .origin-story-container ul,
+#about-main .story-container .today-container ul {
+    margin-top: 30px;
+}
+
+#about-main .story-container .need-for-dx-container ul li,
+#about-main .story-container .our-tech-container ul li,
+#about-main .story-container .origin-story-container ul li,
+#about-main .story-container .today-container ul li {
+    line-height: 25px;
+    padding-left: 5px;
+    color: #676a6c;
+}
+#gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4px;
+}
+
+#gallery img {
+    width: 33%;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 8px;
+    padding: 0 4px;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    #gallery img {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    #gallery img {
+        width: 100%;
+    }
+}

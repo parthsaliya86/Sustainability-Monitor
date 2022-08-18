@@ -1,0 +1,328 @@
+:root {
+    --bg-color: white;
+    --primary-color: #E95205;
+    --secondary-color: #2A3141;
+    --font-color1: white;
+    --font-color2: #B5B5B5;
+    --hover-color: rgb(191, 220, 234);
+
+    --font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body,
+html,
+section,
+div {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+nav,
+section {
+    overflow-x: hidden;
+}
+
+/* Button Style #1 */
+.btn {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    font-family: var(--font-family);
+    font-weight: bold;
+}
+
+.btn:hover:focus {
+    color: #fff;
+    outline: 0;
+}
+
+.first {
+    transition: box-shadow 500ms ease-in-out, color 500ms ease-in-out;
+}
+
+.first:hover {
+    box-shadow: 0 0 40px 40px var(--primary-color) inset;
+    color: white;
+}
+
+.heading {
+    font-size: 60px;
+    font-family: var(--font-family);
+}
+
+.heading span {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+/* navbar styling  start*/
+.navbar {
+    background-color: var(--primary-color);
+}
+
+
+
+.navbar .container h3 {
+    color: white;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: var(--bg-color);
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item a:hover,
+.navbar-nav .nav-item a:active,
+.navbar-nav .nav-item a:focus {
+    color: var(--font-color1);
+    opacity: 0.85;
+}
+
+.navbar-nav .nav-item a::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    display: block;
+    margin-top: 2px;
+    bottom: 0;
+    background: var(--font-color1);
+    opacity: 0.5;
+    transition: 0.5s ease;
+}
+
+.navbar-nav .nav-item a:hover::after,
+.navbar-nav .nav-item a:active::after,
+.navbar-nav .nav-item a:focus::after {
+    width: 100%;
+    opacity: 1;
+    color: var(--font-color1);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(191, 220, 234, 0.5)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='5' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: var(--font-color1);
+}
+
+/* End navbar styling */
+
+
+
+/* Header styling start */
+.header .row {
+    display: flex;
+    align-items: center;
+}
+
+.header p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* End Header styling */
+
+
+/* Start measures */
+.measures {
+    margin-top: 100px;
+}
+
+.measures .row {
+    display: flex;
+    align-items: center;
+}
+
+.measures .row .heading {
+    font-size: 2.8rem;
+}
+
+.line {
+    border-bottom: 3px solid var(--primary-color);
+    min-width: 22rem;
+    height: 5px;
+    border-radius: 4px;
+    margin-bottom: 2.5rem;
+}
+
+/* End measures */
+
+
+/* Start Company listing */
+.companies {
+    margin-top: 100px;
+}
+
+.filter-app img {
+    border: 2px black;
+}
+
+.padded {
+    margin: 60px 0;
+}
+
+.avatar {
+    border-radius: 20px;
+}
+
+.avatar-bordered {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: white 15px solid;
+}
+
+.avatar-large {
+    width: 50px;
+}
+
+.card {
+    height: 180px;
+    width: 180px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-size: cover !important;
+    color: white;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card>img {
+    margin-bottom: 50px;
+    padding: 15px;
+}
+
+.card-header-name {
+    background: var(--secondary-color);
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0px 10px 10px;
+    font-family: auto;
+    line-height: 2em;
+    height: 3em;
+    overflow: hidden;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card-header-name>span {
+    /* text-transform: uppercase; */
+    font-weight: 500;
+    font-size: large;
+}
+
+/* End Company listing */
+
+/* Start teams listing */
+.teams {
+    margin-top: 100px;
+}
+
+.teams .container .in {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.teams .container .in .row {
+    align-items: center;
+    justify-content: center;
+}
+
+#team1 {
+    margin-top: 60px;
+    border: 2px var(--primary-color);
+    /* box-shadow: var(--primary-color) -2px 2px 5px; */
+    /* box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
+        rgb(60 64 67 / 15%) 0px 2px 6px 2px; */
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#team2 {
+    margin-top: 60px;
+    border: 2px var(--primary-color);
+    /* box-shadow: var(--primary-color) 2px 2px 5px; */
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card1 {}
+
+#number {
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 60px;
+}
+
+/* End teams listing */
+
+/* Start showcase */
+.showcase {
+    margin-top: 60px;
+}
+
+/* End showcase */
+
+
+
+/* Start footer */
+.footer {
+    margin-top: 100px;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 40px 0px 40px 0px;
+}
+
+.social-links i,
+a {
+    color: white;
+    font-style: none;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.line2 {
+    border: 2px solid var(--font-color2);
+}
+
+.container .copy1 .copyright {
+    align-items: center;
+    justify-content: center;
+}
+
+.router-link-active::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    display: block;
+    margin-top: 2px;
+    bottom: 0;
+    background: var(--font-color1);
+    opacity: 0.5;
+    transition: 0.5s ease;
+    border-bottom: 3px solid;
+}
+
+.text-error{
+    color: #dc3545 !important;
+}

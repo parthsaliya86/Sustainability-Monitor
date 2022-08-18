@@ -1,0 +1,28 @@
+h1 {
+    margin-top: 0;
+}
+.cards {
+    padding: 16px;
+}
+
+.cards>.card {
+    border-radius: 4px;
+    padding: 16px;
+    border: 1px solid grey;
+    margin-bottom: 16px;
+    background: white;
+    color: #222529;
+    height: 60px;
+    width: 100%;
+}
+
+.cards>.-ochre {
+    border-left: 3px solid #F69A00;
+}
+
+.cards .-tomato {
+    border-left: 3px solid #E5585F;
+}
+a {
+    color: #E95205;
+}

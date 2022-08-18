@@ -1,0 +1,31 @@
+<!-- List of companies start-->
+<section id="companies" class="companies">
+
+    <div class="container" data-aos="fade-up">
+
+        <header class="section-heade">
+            <h1 class="heading"><span>F</span>irms</h1>
+        </header>
+
+        <div class="wrapper-grey padded">
+            <div class="container">
+                <div class="col-md-12 text-right" style="
+                    float: right;
+                "><span style="
+                    float: right;
+                    margin-bottom: 0.51rem;
+                    cursor: pointer;
+                    margin-right: 0.91rem;
+                    color: #E95205;
+                " routerLink="/company/list">
+                        View all&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span> </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-2" *ngFor="let cmp of selectedCompanies">
+                        <app-company-card [company]="cmp" ></app-company-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End List of companies-->

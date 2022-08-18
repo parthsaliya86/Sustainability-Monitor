@@ -1,0 +1,79 @@
+<!-- Teams -->
+<section class="teams">
+    <div class="container">
+        
+            <header class="section-header mb-5 text-center" style="margin-bottom: 100px;">
+                <h1 class="heading"><span>M</span>eet <span>O</span>ur <span>T</span>eam </h1>
+            </header>
+            <header class="section-header">
+                <h1 class="heading" style="font-size: 3rem;"><span>P</span>roject <span>C</span>oordinator</h1>
+            </header>
+        <div class="in" style="width: fit-content;">
+            <div class="row" id="team1">
+                <app-team-card  *ngFor="let userTeam of ProjectCoordinator" [user]="userTeam"></app-team-card>
+            </div>
+        </div>
+        <header class="section-header mt-5">
+            <h1 class="heading" style="font-size: 3rem;"><span>D</span>eveloper <span>T</span>eam</h1>
+        </header>
+        <div class="in">
+            <div class="row" id="team1">
+                <div class="col-md-4">
+                    <h1><span id="number">1.</span> Data Extraction</h1>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3" *ngFor="let userTeam of teams1">
+                                <app-team-card [user]="userTeam"></app-team-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="team2">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3" *ngFor="let userTeam of teams2">
+                                <app-team-card [user]="userTeam"></app-team-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h1><span id="number">2.</span> Data Extraction</h1>
+                </div>
+            </div>
+            <div class="row" id="team1">
+                <div class="col-md-4">
+                    <h1><span id="number">3.</span> Visualization</h1>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3" *ngFor="let userTeam of teams3">
+                                <app-team-card [user]="userTeam"></app-team-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="team2">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3" *ngFor="let userTeam of teams4">
+                                <app-team-card [user]="userTeam"></app-team-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h1><span id="number">4.</span> Web Integration</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Teams -->

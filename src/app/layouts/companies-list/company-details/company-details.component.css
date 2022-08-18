@@ -1,0 +1,28 @@
+    .card{
+        background: #f7f7f7;
+    }
+
+    #showreports{
+        margin: 30px 14px;
+        padding: 0;
+    }
+
+    .bg-profile{
+        border: 1.5px solid #9b9b9b;
+        border-radius: 10px;
+        height: 200px;
+        background-size: cover;
+        width: 200px;
+        background-repeat: no-repeat;
+        background-size: 200px;
+        background-position: right center;
+        background-color: #f7f7f7;
+    }
+
+    .text-error{
+        font-weight: bolder;
+        color: #c3c3c3;
+        text-align: center;
+        font-size: larger;
+        min-height: 4rem;
+    }

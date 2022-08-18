@@ -1,0 +1,35 @@
+.teams {
+    margin-top: 100px;
+}
+
+.teams .container .in {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.teams .container .in .row {
+    align-items: center;
+    justify-content: center;
+}
+
+#team1 {
+    margin-top: 60px;
+    border: 2px var(--primary-color);
+    box-shadow: var(--primary-color) -2px 2px 5px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#team2 {
+    margin-top: 60px;
+    border: 2px var(--primary-color);
+    box-shadow: var(--primary-color) 2px 2px 5px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#number {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 50px;
+}

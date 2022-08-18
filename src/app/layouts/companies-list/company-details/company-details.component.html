@@ -1,0 +1,86 @@
+<!-- Header Start -->
+<section class="header">
+    <div class="container">
+        <div class="row">
+            <!-- Left-Side -->
+            <div class="col-md-2 col-sm-12  left bg-profile" style="background-image: url({{company?.reports_page_link}}) ;">
+            </div>
+
+            <!-- Rigth-Side -->
+            <div class="col-md-10 col-sm-12 right">
+                <div style='margin-top: 60px;'>
+                    <h4 style='font-size: 20px; color: #E95205;'> About Firm</h4>
+
+                    <p [innerHTML]="company?.description"></p>
+                    <a [href]="company?.web_link" target="_blank"> <button type="button" class="btn first px-5 py-2" id="reports">View more</button></a>
+                    <!-- <a [routerLink]="['/company/report/details/sajkd&%&78hajsdk234234']" routerLinkActive="router-link-active" > <button type="button" class="btn first px-5 py-2 mx-3">View
+                            Analysis</button></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Header End -->
+<div class="wrapper-grey padded">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="showreports">
+                <div>
+                    <h3 style='font-size: 20px; color: #E95205; '> PDF Reports </h3>
+                    <hr>
+                </div>
+            </div>
+            <ng-container *ngIf="company?.dow_reports_link.length != 0">
+                <div class="col-xs-12 col-sm-4 col-md-2" *ngFor="let item of company?.dow_reports_link">
+                    <div class="card align-items-center justify-content-center">
+                        <a [href]="item" title="Download" download rel="noopener noreferrer" target="_blank">
+                            <img *ngIf="company?.isXLS != true" src="/assets/img/pdf.png" alt="" width="130px">
+                            <img *ngIf="company?.isXLS == true" src="/assets/img/xls.jpeg" alt="" width="130px">
+                        </a>
+                    </div>
+                    <div style='margin-top:10px;'>
+                        <p style='text-align: center; font-size: smaller; width: 11rem; word-break: break-word;'>{{ _getreportsName(item) }}</p>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="company?.dow_reports_link.length == 0">
+                <div class="col-md-12 test-center">
+                    <p class="text-error">Oops, we currently have no PDF reports available for this firm. Check back later!</p>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper-grey padded">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="showreports">
+                <div>
+                    <h3 style='font-size: 20px; color: #E95205; '> WordCloud </h3>
+                    <hr>
+                </div>
+            </div>
+            <ng-container *ngIf="company?.wordcloud.length !== 0">
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb-5 mt-2" *ngFor="let cloudImg of company?.wordcloud">
+                        <div class="card cursor-pointer align-items-center justify-content-center"
+                        style="background-image: url({{cloudImg}});
+                            background-size: cover;
+                            background-position: center center;
+                            width: 60vmin;
+                            height: 45vmin;">
+                            <div class="card-header-name text-center" style="    bottom: -2.2rem !important;">
+                                <span>{{ getCloudName(cloudImg) }}</span>
+                            </div>
+                        </div>
+                    </div>
+            </ng-container>
+            <ng-container *ngIf="company?.wordcloud.length == 0">
+                <div class="col-md-12 test-center">
+                    <p class="text-error">Oops, we currently have no wordCloud available for this firm. Check back
+                        later!</p>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

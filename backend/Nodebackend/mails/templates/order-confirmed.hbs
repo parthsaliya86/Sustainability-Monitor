@@ -1,0 +1,615 @@
+{{#extend "layout"}}
+  {{#content "body"}}
+
+    <center>
+        <table style="width: 680px !important;" width="500">
+            <tbody>
+            <tr>
+                <td>
+                <table
+                    border="0"
+                    style="
+                    width: 100%;
+                    border: solid 1px #fff;
+                    padding: 10px 30px 30px 30px;
+                    "
+                >
+                    <tbody>
+                    <tr>
+                        <td align="center">
+                        <img
+                            src="https://www.harikrushn.com/assets/img/hk-logo.png"
+                            height="auto"
+                        />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr style="width: 100%;">
+                        <td align="center">
+                        <b style="font-size: 20px;">
+                            
+                            {{#if_confirmed buttonShow 'confirmed'}}
+                                Order Confirmed
+                            {{/if_confirmed}}
+
+                            {{#if_delivered buttonShow 'delivered'}}
+                                Order delivered
+                            {{/if_delivered}}
+
+                            {{#if_approved buttonShow 'approved'}}
+                                Order approved <br/> Your tracking ID is : {{ shippingDetail?.shipment_id }} 
+                            {{/if_approved}}
+
+                            {{#if_canceled buttonShow 'canceled'}}
+                              <span style="    color: #ff0000c2;">  Your Order is canceled </span>
+                            {{/if_canceled}}
+
+                            {{#if_shipped buttonShow 'shipped'}}
+                                Your order is REACHED AT DESTINATION
+                            {{/if_shipped}}
+
+                        </b>
+
+                            {{#if_shipped buttonShow 'shipped'}}
+                                <br><br><span style="color: #3c871b;font-size: 16px;font-weight: 700;">Today your order is delivery by courier boy so request to take the order</span> 
+                            {{/if_shipped}}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 60%;" align="center"></td>
+                    </tr>
+                    <tr></tr>
+
+                    <tr>
+                        <td style="text-align: left;">
+                        <p id="FirstName">Hi {{ user.name }}!</p>
+                        <p style="line-height: 1.5;">
+                            We are preparing your order. We are trying our best to
+                            deliver your order at the earliest. However, due to the
+                            current restrictions, deliveries are likely to take longer
+                            than usual. Thank you for your patience and understanding.
+                            <br />
+                            <br />
+                        </p>
+                        <p>
+                            In the meantime, you can track your order below.
+                        </p>
+                        <p>
+                            Stay Home, Stay Safe, Stay Stylish!
+                            <br />
+                            Harikrushn
+                        </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 32px;">
+                        <p
+                            style="
+                            padding-bottom: 1px;
+                            border: 0px solid #7a5e14;
+                            background: #7a5e14;
+                            margin-top: 10px;
+                            height: 1px;
+                            "
+                        ></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; padding-bottom: 15px;">
+
+                            
+                            {{#if_confirmed buttonShow 'confirmed'}}
+
+                                {{#if order.verifyAccountSendMail}}
+                                     <a href="{{link}}"
+                                            target="_blank"
+                                            style="
+                                            margin: 0 auto;
+                                            width: auto;
+                                            background-color: #7a5e15;
+                                            color: white;
+                                            text-decoration: none;
+                                            text-transform: uppercase;
+                                            padding: 12px 15px;
+                                            font-size: 16px;
+                                            border-radius: 4px;
+                                            letter-spacing: 1.2px;"
+                                        >
+                                        &nbsp;&nbsp;Verify Account&nbsp;&nbsp;
+                                    </a>
+                                {{else}}
+                                    <a href="https://www.harikrushn.com/user/order/detail/{{order._id}}"
+                                            target="_blank"
+                                            style="
+                                            margin: 0 auto;
+                                            width: auto;
+                                            background-color: #7a5e15;
+                                            color: white;
+                                            text-decoration: none;
+                                            text-transform: uppercase;
+                                            padding: 12px 15px;
+                                            font-size: 16px;
+                                            border-radius: 4px;
+                                            letter-spacing: 1.2px;"
+                                        >
+                                        &nbsp;&nbsp;Track Order&nbsp;&nbsp;
+                                    </a>
+                                {{/if}}
+
+                            {{/if_confirmed}}
+
+                            {{#if_delivered buttonShow 'delivered'}}
+                                <img src="https://www.harikrushn.com/assets/img/correct.png"     height="60px">
+                            {{/if_delivered}}
+                       
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                        id="OrderNumber"
+                        style="padding: 20px 0px; text-align: left;"
+                        >
+                        <b style="font-size: 19px;">Your Order Details</b>
+                        <br />
+                        <span style="color: #7e818b;">Order no.:</span> {{ order._id
+                        }}
+                        </td>
+                    </tr>
+
+                    {{#each order.products }}
+                    
+                    <tr>
+                        <td style="padding: 0px 0px 10px 0px;">
+                        <table
+                            class="tableStyle"
+                            style="
+                            width: 100%;
+                            border: solid 1px #aaa;
+                            border-radius: 10px;
+                            "
+                            border="0"
+                            cellpadding="0"
+                            cellspacing="0"
+                        >
+                            <tbody>
+                            <tr>
+                                <td
+                                rowspan="7"
+                                style="width: 25%; border-right: solid 1px #aaa;"
+                                class="imgPadding"
+                                >
+                                <img
+                                    class="imgCSS"
+                                    src="https://www.harikrushn.com{{ this.product.image_500 }}"
+                                    style="
+                                    width: 99%;
+                                    height: auto;
+                                    border-radius: 9px 0 0 9px;
+                                    border: 0;
+                                    padding: 0;
+                                    margin: 0;
+                                    vertical-align: top;
+                                    "
+                                />
+                                </td>
+                                <td
+                                rowspan="3"
+                                style="
+                                    width: 50%;
+                                    padding: 10px 0px 0px 10px;
+                                    text-align: left;
+                                    font-weight: bold;
+                                "
+                                valign="top"
+                                >
+                                {{ this.product.name }}
+                                </td>
+                                <td
+                                id="ItemSize-8070333908"
+                                style="
+                                    width: 25%;
+                                    text-align: right;
+                                    padding: 10px 15px 0px 0px;
+                                "
+                                >
+                                Size: {{ this.size }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                id="ItemQuantity-8070333908"
+                                style="text-align: right; padding-right: 15px;"
+                                >
+                                Qty: {{ this.quantity }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 10px; text-align: left;">
+                                Price
+                                </td>
+                                <td style="padding-right: 15px; text-align: right;"
+                                >
+                                ₹ {{ this.product.price }}.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 10px; text-align: left;">
+                                Discount
+                                </td>
+                                <td style="padding-right: 15px; text-align: right;">
+                                ₹ 0.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                style="
+                                    padding-left: 10px;
+                                    text-align: left;
+                                    font-weight: bold;
+                                "
+                                >
+                                Total
+                                </td>
+                                <td style="
+                                    padding-right: 15px;
+                                    text-align: right;
+                                    font-weight: bold;
+                                "
+                                >
+                                ₹ {{ multiply this.product.price this.quantity }}  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                colspan="2"
+                                style="padding-left: 10px; text-align: left;"
+                                >
+                                <span
+                                    id="ItemSellerName-8070333908"
+                                    style="
+                                    font-style: italic;
+                                    color: #7e818b;
+                                    font-weight: lighter;
+                                    font-size: 13px;
+                                    "
+                                    >Sold by: Harikrushn</span
+                                >
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </td>
+                    </tr>
+                    
+                    {{/each}}
+
+                    <tr>
+                        <td>
+                        <p
+                            style="
+                            padding-bottom: 1px;
+                            border: 0px solid #7a5e14;
+                            background: #7a5e14;
+                            margin-top: 10px;
+                            height: 1px;
+                            "
+                        ></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <table
+                            width="100%"
+                            border="0"
+                            cellpadding="0"
+                            cellspacing="0"
+                            style="margin-top: 10px;"
+                        >
+                            <tbody>
+                            <tr>
+                                <td
+                                width="50%"
+                                style="
+                                    border-right: solid 1px #ccc;
+                                    color: #7e818b;
+                                    text-align: left;
+                                "
+                                valign="top"
+                                >
+                                <table
+                                    width="100%"
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                >
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                        <b style="font-size: 19px; color: #282c3f;"
+                                            >Delivery Address</b
+                                        >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="Address">
+                                        {{ shippingDetail.billing_address }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="Locality">
+                                        {{ shippingDetail.billing_city }},
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="City">
+                                        {{ shippingDetail.billing_state }},
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="State">
+                                        {{ shippingDetail.billing_country }} {{
+                                        shippingDetail.billing_pincode }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                </td>
+                                <td
+                                width="50%"
+                                style="padding-left: 15px; text-align: left;"
+                                valign="top"
+                                >
+                                <table
+                                    width="100%"
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                >
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                        <b style="font-size: 19px; color: #282c3f;"
+                                            >Billing Details</b
+                                        >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <table
+                                            cellpadding="0"
+                                            cellspacing="0"
+                                            style="width: 100%; color: #7e818b;"
+                                        >
+                                            <tbody>
+                                            <tr>
+                                                <td
+                                                class="packet_billing"
+                                                style="
+                                                    padding: 3px 0;
+                                                    text-align: left;
+                                                "
+                                                >
+                                                Package amount
+                                                </td>
+                                                <td
+                                                id="BillingTotalPackageValue"
+                                                style="text-align: right;"
+                                                >
+
+                                                {{#if_packAmount order.products}}
+                                                {{/if_packAmount}}
+                                                
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td
+                                                class="packet_billing"
+                                                style="
+                                                    padding: 3px 0;
+                                                    text-align: left;
+                                                "
+                                                >
+                                                Total Discount
+                                                </td>
+                                                <td
+                                                id="ChargeAmount-shipping"
+                                                style="text-align: right;"
+                                                >
+                                                
+                                                {{orderDiscount order.products payment.amount payment.paymentMethod}}
+                                                
+
+                                                </td>
+                                            </tr>
+
+                                              <tr>
+                                            <td class="packet_billing" style="padding: 3px 0;text-align:left;">
+                                                Shipping Charge
+                                            </td>
+                                            <td id="ChargeAmount-shipping" style="color: #118410;text-align: right">
+                                               Free
+                                            </td>
+
+                                          
+                                        </tr>
+
+                                        <tr>
+                                              <td class="packet_billing" style="padding: 3px 0;text-align:left;">
+                                                COD Charge
+                                            </td>
+                                            
+                                            <td id="ChargeAmount-shipping" style="color: #118410;text-align: right">
+                                                {{#if_eq payment.paymentMethod "COD"}}
+                                                {{else}}
+                                                {{/if_eq}}
+
+                                            </td>
+                                        </tr>
+
+                                          <tr>
+                                                <td
+                                                class="packet_billing"
+                                                style="
+                                                    padding: 3px 0 3px 0;
+                                                    color: #282c3f;
+                                                    text-align: left;
+                                                "
+                                                >
+                                                Mode of Payment
+                                                </td>
+                                                <td
+                                                id="PaymentMethodDisplay"
+                                                style="
+                                                    color: #282c3f;
+                                                    text-align: right;
+                                                "
+                                                >
+
+                                                {{#ifEquals payment.paymentMethod "COD"}} 
+                                                {{else}}
+                                                {{/ifEquals}}
+                                                
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td
+                                                style="
+                                                    padding: 8px 0 3px 0;
+                                                    color: #282c3f;
+                                                    border-top-style: solid;
+                                                    border-top-width: 1px;
+                                                    border-top-color: #ccc;
+                                                    text-align: left;
+                                                    font-weight: bold;
+                                                "
+                                                >
+                                                Total
+                                                </td>
+                                                <td
+                                                id="BillingTotalAmount"
+                                                style="
+                                                    padding: 8px 0 3px 0;
+                                                    text-align: right;
+                                                    color: #282c3f;
+                                                    border-top-style: solid;
+                                                    border-top-width: 1px;
+                                                    border-top-color: #ccc;
+                                                    font-weight: bold;
+                                                "
+                                                >
+                                                ₹ {{ payment.amount }}
+                                                </td>
+                                            </tr>
+                                          
+                                            </tbody>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <p
+                            style="
+                            padding-bottom: 1px;
+                            border: 0px solid #7a5e14;
+                            background: #7a5e14;
+                            margin-top: 10px;
+                            height: 1px;
+                            "
+                        ></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                       <td>
+                            <p style="color: #d81212c7;margin-block-start: 0.3em;
+                                margin-block-end: 0.5em;"> Note : </p>
+                            <p style="margin-block-start: 0.3em; margin-block-end: 0.3em;">( 1 ) Open courier delivery is not available.</p>
+                            <p style="margin-block-start: 0.3em; margin-block-end: 0.3em;">( 2 ) We are providing order delivery within 6 to 7 days.</p>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                        We are committed to serving you with utmost safety.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                        <p
+                            style="
+                            padding-bottom: 1px;
+                            border: 0px solid #7a5e14;
+                            background: #7a5e14;
+                            height: 1px;
+                            "
+                        ></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 10px; text-align: left;">
+                        <b style="font-size: 20px;">What Happens Next?</b>
+                        <p
+                            id="isEventGoingOn"
+                            style="color: #7e818b; line-height: 1.5;"
+                        >
+                            We will send you a confirmation once your bag of joy is
+                            prepped &amp; ready to ship.
+                            <br />
+                            If you want to reach us, please
+
+                            <a
+                            href="https://www.harikrushn.com/contactUs"
+                            style="
+                                text-decoration: underline;
+                                font-weight: 600;
+                                color: #282c3f;
+                            "
+                            >
+                            Contact Us
+                            </a>
+                            here.
+                        </p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </center>
+
+  {{/content}}
+{{/extend}}
+	
+        
+
+        

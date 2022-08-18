@@ -1,0 +1,73 @@
+<section class="p-5">
+    <div class="container mobile-min-wid">
+        <div class="row m-b-10">
+            <div class="col-12 text-center">
+                <div class="heading-part align-center">
+                    <h2 class="text-center m-b-10">Contact Us</h2>
+                </div>
+            </div>
+            
+            <div class="col-md-10 offset-md-1 m-t-10 m-t-10 p-5 mt-3" style="    background: #b1b1b114;
+    border-radius: 5px;">
+
+                <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+                    {{errorMessage}}
+                </div>
+                <div class="alert alert-success" role="alert" *ngIf="successMessage">
+                    {{ successMessage }}
+                </div>
+
+                <form #contactUs="ngForm" (ngSubmit)="_contactUs(contactUs)">
+
+                    <div class="row p-3">
+
+                        <div class="form-group col-md-6 col-6">
+
+                            <label for="name">Name*</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name" name="name" required
+                                #name="ngModel" ngModel>
+                            <label for="recipient-name" class="col-form-label text-error"
+                                *ngIf="name.touched && name.invalid"> *Please enter your name</label>
+
+                        </div>
+
+                        <div class="form-group col-md-6 col-6">
+                            <label for="email">Email*</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" name="email"
+                                required #email="ngModel" ngModel>
+                            <label for="recipient-name" class="col-form-label text-error"
+                                *ngIf="email.touched && email.invalid"> *Please enter your email</label>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group p-3">
+                        <label for="phone">Phone number</label>
+                        <input type="number" class="form-control" id="phone" placeholder="Phone number"
+                            pattern="^[789]\d{9}$" name="phone" #phone="ngModel" ngModel>
+                        <label for="recipient-name" class="col-form-label text-error"
+                            *ngIf="phone.touched && phone.invalid"> *Please enter your valid 10 digit phone
+                            number</label>
+                    </div>
+
+                    <div class="form-group p-3">
+                        <label for="message">Message*</label>
+                        <textarea type="text" class="form-control" id="message" placeholder="Your message" rows="5"
+                            name="message" required #message="ngModel" ngModel style="min-height: 150px;"></textarea>
+                        <label for="recipient-name" class="col-form-label text-error"
+                            *ngIf="message.touched && message.invalid"> *Please enter message</label>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-color fr" [disabled]="contactUs.invalid" style="    float: right;
+    margin-top: 20px;">Submit <i
+                            class="fa fa-spinner fa-spin" *ngIf="isLoad"></i></button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>

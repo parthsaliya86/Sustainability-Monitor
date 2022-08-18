@@ -1,0 +1,137 @@
+.team__item {
+    /* height: 480px; */
+    /* position: relative; */
+    z-index: 1;
+    /* margin-bottom: 30px; */
+    overflow: hidden;
+    /* background-position: center; */
+    background-size: cover;
+}
+
+.team__item:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #00000082;
+    content: "";
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition: all, 0.5s, ease-out, .5s;
+    -o-transition: all, 0.5s, ease-out, .5s;
+    transition: all, 0.5s, ease-out, .5s
+}
+
+.team__item:hover:after {
+    opacity: 1
+}
+
+.team__item:hover .team__text {
+    top: 0;
+    width: 100%;
+}
+
+.team__item:hover .team__text .team__title {
+    border-bottom: 0px solid #E95205;
+    padding: 0 0 26px;
+    margin-bottom: 26px;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    bottom: initial;
+    opacity: 1;
+    visibility: visible
+}
+
+.team__item:hover .team__text .team__social {
+    opacity: 1;
+    visibility: visible;
+    bottom: 34px;
+    -webkit-transition: all .5s ease .5s;
+    -o-transition: all .5s ease .5s;
+    transition: all .5s ease .5s
+}
+
+.team__text {
+    height: 100%;
+    top: 361px;
+    position: relative;
+    padding: 35px 30px 30px;
+    background: #00000082;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s
+}
+
+.team__text .team__title {
+    border-bottom: 1px solid rgba(183, 183, 183, 0.2);
+    padding: 0 0 26px;
+    margin-bottom: 26px;
+    position: relative
+}
+
+.team__text .team__title h4 {
+        color: #fff;
+            font-weight: 900;
+            margin-bottom: 10px;
+            font-size: large;
+}
+
+.team__text .team__title span {
+    font-size: 15px;
+    color: #88C417
+}
+
+.team__text p {
+    color: #e4e4e4;
+    line-height: 26px;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    top: 50px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s
+}
+
+.team__text .team__social {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0 20px;
+    display: flex;
+}
+
+.team__text .team__social a {
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    margin-right: 22px;
+    transition: all, .3s;
+    -webkit-transition: all, .3s;
+    -o-transition: all, .3s;
+    transition: all, .3s;
+    margin-left: 10px;
+}
+
+.team__text .team__social a:last-child {
+    margin-right: 0
+}
+
+.team__text .team__social a:hover {
+    color: #e95205;
+}
+
+@media(max-width:768px) {
+    .team__item {
+        height: 350px
+    }
+
+    .team__text {
+        padding: 25px 20px 20px
+    }
+}

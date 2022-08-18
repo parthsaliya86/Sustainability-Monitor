@@ -1,0 +1,29 @@
+const app = require('../app')
+const http = require('http')
+
+const server = http.createServer(app)
+
+const host = process.argv[4] || '0.0.0.0'
+const port = process.argv[3] || CONFIG.PORT
+
+// var option = {
+//   pingInterval: 10000,
+//   pingTimeout: 5000,
+// }
+
+
+// io = module.exports = require('socket.io')(server,option);
+
+// io.on('connection',(s) =>{
+// 	console.log('New connection found')
+// })
+
+
+server.listen(port,host,(err) =>{
+	if(err){
+		console.debug('Error while start server');
+		return;
+	}
+	console.debug('Server running on ' + host + ':' + port);
+});
+

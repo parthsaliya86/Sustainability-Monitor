@@ -1,0 +1,174 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mb-3 mt-5">
+            <h3 class="heading"><span>R</span>eport <span
+                >D</span>ashboard</h3>
+        </div>
+        <div class="com-md-12">
+            <form method="post">
+                <input type="text" class="textbox" placeholder="Search company...">
+                <span class='bi bi-search button' style='color: white'></span>
+            </form>
+            <div class="test-div">
+                <!-- test-div not needed -->
+                <select class="form-select wsol-select" aria-label="Default select example">
+                    <option selected>Years</option>
+                    <option value="1">2018</option>
+                    <option value="2">2019</option>
+                    <option value="3">2020</option>
+                    <option value="3">2021</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="column">
+                <!--start card here-->
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <smart-chart #chart id="chart" [caption]="caption" [description]="description" [showLegend]="showLegend"
+                                [padding]="padding" [titlePadding]="titlePadding" [dataSource]="dataSource" [colorScheme]="colorScheme"
+                                [xAxis]="xAxis" [valueAxis]="valueAxis" [seriesGroups]="seriesGroups1"></smart-chart>
+                        </div>
+    
+                    </div>
+                </div>
+                <!--end card here-->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="column">
+                <!--start card here-->
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            </div>
+                            <div class="media-content">
+                                <div class="media">
+                                <smart-chart #chart id="chart" [caption]="caption2" [description]="description2" [animationDuration]="animationDuration"
+                                    [enableCrosshairs]="enableCrosshairs" [padding]="padding2" [colorScheme]="colorScheme2" [dataSource]="dataSource2"
+                                    [xAxis]="xAxis2" [seriesGroups]="seriesGroups2"></smart-chart>
+                                <br />
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <!--end card here-->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="column">
+                <!--start card here-->
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            </div>
+                            <div class="media-content">
+                            <div class="media">
+                            <smart-chart #chart id="chart" [caption]="caption3" [description]="description3" [showLegend]="showLegend3"
+                                [showBorderLine]="showBorderLine" [padding]="padding3" [titlePadding]="titlePadding3" [dataSource]="dataSource3"
+                                [seriesGroups]="seriesGroups3"></smart-chart>
+                            </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                <!--end card here-->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="column">
+                <!--start card here-->
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            </div>
+                            <div class="media-content">
+                                <div class="media">
+                                    <smart-chart #chart id="chart" [borderLineColor]="borderLineColor4" 
+                                        [caption]="caption4" [description]="description4" [showLegend]="showLegend4" [padding]="padding4"
+                                        [titlePadding]="titlePadding4" [dataSource]="dataSource4" [xAxis]="xAxis4" [valueAxis]="valueAxis4"
+                                        [seriesGroups]="seriesGroups44"></smart-chart>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                <!--end card here-->
+            </div>
+        </div>
+
+        <!-- charts5 -->
+        <div class="col-md-6">
+            <div class="column">
+                <!--start card here-->
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            </div>
+                            <div class="media-content">
+                                <div class="media">
+                                    <smart-chart #chart id="chart" [borderLineColor]="borderLineColor5" [caption]="caption5"
+                                        [description]="description5" [showLegend]="showLegend5" [padding]="padding5"
+                                        [titlePadding]="titlePadding5" [dataSource]="dataSource5" [xAxis]="xAxis5"
+                                        [valueAxis]="valueAxis5" [seriesGroups]="seriesGroups55"></smart-chart>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                <!--end card here-->
+            </div>
+        </div>
+
+        <!-- charts6 -->
+        <div class="col-md-6">
+            <div class="column">
+                <!--start card here-->
+                <div class="card">
+                    <div class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            </div>
+                            <div class="media-content">
+                                <div class="media">
+                                    <smart-chart #chart id="chart" [borderLineColor]="borderLineColor6" [caption]="caption6"
+                                        [description]="description6" [showLegend]="showLegend6" [padding]="padding6"
+                                        [titlePadding]="titlePadding6" [dataSource]="dataSource6" [xAxis]="xAxis6"
+                                        [valueAxis]="valueAxis6" [seriesGroups]="seriesGroups66"></smart-chart>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                <!--end card here-->
+            </div>
+        </div>
+
+        <div class="col-md-12 text-center mt-5">
+            <button type="button" class="btn first px-5 py-2 mx-3">PDF Reports</button>
+        </div>
+    </div>
+</div>
